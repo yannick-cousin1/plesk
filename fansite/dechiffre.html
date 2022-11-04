@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+      <head>
+            <title>Richard Stallman's fansite</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+            <link rel="shortcut icon" href="pic/gnu-icon.png" type="image/x-icon">
+            <link href="fansite.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+            <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+      </head>
+
+      <body>
+            <header>
+                  <nav>
+                        <ul>
+                              <li><a href="index.html">Accueil</a></li>
+                              <li><a href="actualites.html">Actualités</a></li>
+                              <li><a href="realisations.html">Réalisations</a></li>
+                              <li><a href="evenements.html">Evènements</a></li>
+                              <li><a href="photos.html">Photos</a></li>
+                              <li><a href="videos.html">Vidéos</a></li>
+                              <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                  </nav>
+
+            </header>
+
+
+
+
+<py-script>
+def convert_key_to_int(key):
+    x = 0
+    tab = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    for i in key:
+        for j in range(len(tab)):
+            if i == tab[j]:
+                x += j
+    if x % 27 == 0:
+        x += 1
+
+    return x
+
+def dechiffrement(msg,decalage):
+    tab = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+           'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+    message_a_dechiffrer = ""
+    convert = 0
+
+    for i in range(len(msg)):
+        for j in range(len(tab)):
+            if msg[i] == tab[j]:
+                if (j - decalage) > 0:
+                    convert = (decalage - j) % 27
+                    message_a_dechiffrer += tab[convert]
+                else:
+                    convert = ((decalage - j) * -1) % 27
+                    message_a_dechiffrer += tab[convert]
+
+
+    return message_a_dechiffrer
+
+choix = 2
+
+if choix == 1:
+  key = input("Entrez la clef à utiliser pour le chiffrement : ")
+  valeur_decalage = convert_key_to_int(key)
+
+  message = input("Entrez le message à chiffrer : ")
+  message_chiffre = chiffrement(message,valeur_decalage)
+  print ("Message chiffré : ", message_chiffre)
+
+elif choix == 2:
+
+  key = input("Entrez la clef pour déchiffrer : ")
+  valeur_decalage = convert_key_to_int(key)
+
+  message = input("Entrez le message à déchiffrer: ")
+  print("Message déchiffré : " , dechiffrement(message,valeur_decalage))
+ </py-script>
+
+</body>
+</html>
