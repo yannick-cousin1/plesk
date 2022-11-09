@@ -1,0 +1,3 @@
+[submodule "voyages"]
+	path = voyages
+	url = https://github.com/morgane-marechal/voyages
