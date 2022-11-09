@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ~/ReposGit/plesk
+
 git rm -r voyages
 git add .
 git commit -m "rm voyages.auto_clone.sh"
