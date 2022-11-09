@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git rm voyages
+git rm -r voyages
 git add .
 git commit -m "rm voyages.auto_clone.sh"
 git push origin master
