@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<!-- favicon needs to be insert here -->" type="image/x-icon">
+    <link rel="stylesheet" href="css/voyages.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>Contact</title>
+</head>
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');</style>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="navigationList">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="menuDeroulant">
+                    <a href="#" class="navLink">Par Continent</a>
+                    <ul class="sousMenu">
+                        <li><a href="madagascar.html">Afrique</a></li>
+                        <li><a href="canada.html">Amérique du nord</a></li>
+                        <li><a href="mexique.html">Amérique centrale</a></li>
+                        <li><a href="japon.html">Asie</a></li>
+                    </ul>
+                </li>
+                <li class="menuDeroulant">
+                    <a href="#" class="navLink">Par Personne</a>
+                    <ul class="sousMenu">
+                        <li><a href="madagascar.html">Yannick</a></li>
+                        <li><a href="canada.html">Anaïs</a></li>
+                        <li><a href="mexique.html">Alban</a></li>
+                        <li><a href="japon.html">Morgane</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact_form">
+        <form method="post" action="traitement.php">
+            <h3>Contact</h3>
+            <div id="fullname">
+                <input type="text" name="name" id="name" placeholder="Nom*" required maxlength="50">
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom*" required maxlength="50">
+            </div>
+            <input type="email" name="email" id="email" placeholder="Email*" required maxlength="100">
+            <label for="pays">* Quel pays votre message concerne-t-il ?</label>
+            <select name="pays" id="pays" required>
+                <option value="" selected>-- Pays concerné* --</option>
+                <optgroup label="Afrique">
+                    <option value="madagascar">Madagascar</option>
+                </optgroup>
+                <optgroup label="Amérique">
+                    <option value="canada">Canada</option>
+                    <option value="mexique">Mexique</option>
+                </optgroup>
+                <optgroup label="Asie">
+                    <option value="japon">Japon</option>
+                </optgroup>
+            </select>
+            <textarea name="message" id="message" placeholder="Votre message*" required maxlength="750"></textarea>
+            <input class="submit" type="submit" value="Envoyer">
+            <i class="small">* Champs obligatoires</i>
+        </form>
+    </section>
+
+    <footer>
+        <ul>
+             <li><a href="index.html"><i class="fas fa-regular fa-house fa-2x FAD494"></i></a></li>
+             <li><a href="madagascar.html"><img class="icon" src="images/mada-icon.png" alt="drapeau de madagascar"></a></li>
+             <li><a href="canada.html"><img class="icon" src="images/canada-icon.png" alt="drapeau du canada"></a></li>
+             <li><a href="mexique.html"><img class="icon" src="images/mexico-icon.png" alt="drapeau du mexique"></a></li>
+             <li><a href="japon.html"><img class="icon" src="images/japan-icon.png" alt="drapeau du japon"></a></li>
+             <li><a href="contact.html"><i class="fas fa-solid fa-message fa-2x FAD494"></i></a></li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>
