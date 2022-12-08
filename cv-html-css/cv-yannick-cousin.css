@@ -11,7 +11,7 @@ body{
 }
 
 a{
-  text-decoration: none;
+  /*text-decoration: none;*/
   color: #60768a;
 }
 
@@ -122,6 +122,16 @@ h2{
   padding: 50px;
 }
 
+
 .experience-list{
   list-style-type: circle;
+}
+
+#logo_plat {
+  border-radius: 50%;
+  max-width: 30px;
+  display: block;
+  float: left;
+  margin-right : 0.5em;
+  margin-top: 0.1em;
 }
